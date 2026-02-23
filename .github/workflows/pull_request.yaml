@@ -1,0 +1,17 @@
+name: Pull Request
+
+on:
+  pull_request_review_comment:
+    types: [created]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  test:
+    if: startsWith(github.event.comment.body, '/test') && github.event.comment.author_association == 'OWNER'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
