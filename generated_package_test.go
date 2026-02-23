@@ -8,5 +8,5 @@ import (
 )
 
 func TestMain(m *testing.M) {
-	goleak.VerifyTestMain(m, goleak.IgnoreTopFunction("go.opencensus.io/stats/view.(*worker).start"), goleak.IgnoreTopFunction("google.golang.org/grpc/internal/grpcsync.(*CallbackSerializer).run"), goleak.IgnoreTopFunction("google.golang.org/grpc/internal/transport.(*controlBuffer).get"), goleak.IgnoreAnyFunction("cloud.google.com/go/bigquery/storage/managedwriter.(*connection).getStream.func1"), goleak.IgnoreAnyFunction("google.golang.org/grpc/internal/transport.(*http2Client).reader"), goleak.IgnoreAnyFunction("net/http.(*http2clientConnReadLoop).run"), goleak.IgnoreAnyFunction("golang.org/x/net/http2.(*clientConnReadLoop).run"))
+	goleak.VerifyTestMain(m)
 }

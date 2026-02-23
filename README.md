@@ -4,14 +4,10 @@ Export OpenTelemetry traces, metrics, and logs to
 [Google BigQuery](https://cloud.google.com/bigquery) using the
 [BigQuery Storage Write API](https://cloud.google.com/bigquery/docs/write-api).
 
-This repository contains a standalone version of the `bigquery` exporter
-originally developed for OpenTelemetry Collector contrib.
-
 ## Status
 
-- Stability: `development` for traces, metrics, and logs
+- Stability: `alpha` for traces, metrics, and logs
 - Signal support: traces, metrics, logs
-- Maintainer: [@glacion](https://github.com/glacion)
 
 ## What It Does
 
@@ -119,15 +115,3 @@ Optional environment override for integration tests:
 - `storage_writer.go`: table management and write path
 - `integration_test.go`: end-to-end BigQuery verification
 - `metadata.yaml`: exporter metadata/stability
-
-## Module Path Note
-
-This standalone repository now uses:
-
-`github.com/glacion/opentelemetry-collector-bigquery-exporter`
-
-If you publish under a different org/repository name, update:
-
-1. `go.mod` module path
-2. Package import comments in `*.go` files (for example `config.go`, `factory.go`)
-3. Any downstream references that import this module path
